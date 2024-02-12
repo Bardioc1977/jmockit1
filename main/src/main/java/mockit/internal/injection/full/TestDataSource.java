@@ -4,6 +4,10 @@
  */
 package mockit.internal.injection.full;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.sql.DataSourceDefinition;
+import jakarta.annotation.sql.DataSourceDefinitions;
+
 import java.beans.BeanInfo;
 import java.beans.IntrospectionException;
 import java.beans.Introspector;
@@ -12,10 +16,7 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.sql.DataSourceDefinition;
-import javax.annotation.sql.DataSourceDefinitions;
 import javax.sql.CommonDataSource;
 
 import mockit.internal.injection.InjectionPoint;

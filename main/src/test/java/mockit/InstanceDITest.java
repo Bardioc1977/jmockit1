@@ -5,13 +5,13 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 
+import jakarta.enterprise.inject.Instance;
+import jakarta.inject.Inject;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import javax.enterprise.inject.Instance;
-import javax.inject.Inject;
 
 import org.junit.Test;
 

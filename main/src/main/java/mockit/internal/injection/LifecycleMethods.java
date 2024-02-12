@@ -9,6 +9,10 @@ import static mockit.internal.injection.InjectionPoint.isServlet;
 import static mockit.internal.reflection.ParameterReflection.getParameterCount;
 import static mockit.internal.util.Utilities.NO_ARGS;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
+import jakarta.servlet.ServletConfig;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -19,9 +23,6 @@ import java.util.Map.Entry;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
-import javax.servlet.ServletConfig;
 
 import mockit.internal.reflection.MethodReflection;
 import mockit.internal.state.TestRun;

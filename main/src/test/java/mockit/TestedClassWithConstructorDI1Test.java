@@ -3,10 +3,10 @@ package mockit;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-import java.util.Observable;
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.PreDestroy;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import java.util.Observable;
 
 import org.junit.After;
 import org.junit.Before;

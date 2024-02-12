@@ -7,15 +7,15 @@ package mockit.internal.injection;
 import static mockit.internal.injection.InjectionPoint.INJECT_CLASS;
 import static mockit.internal.util.Utilities.getClassType;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.inject.Provider;
+
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.inject.Provider;
 
 import mockit.internal.injection.InjectionPoint.KindOfInjectionPoint;
 import mockit.internal.reflection.GenericTypeReflection;

@@ -6,20 +6,20 @@
     <parent>
         <groupId>com.github.hazendaz.jmockit</groupId>
         <artifactId>jmockit-parent</artifactId>
-        <version>1.52.1-SNAPSHOT</version>
+        <version>1.52.1-p1</version>
     </parent>
 
     <groupId>com.github.hazendaz.jmockit</groupId>
     <artifactId>coverage-tests</artifactId>
-    <version>1.52.1-SNAPSHOT</version>
+    <version>1.52.1-p1</version>
 
     <name>JMockit Coverage Tests</name>
 
     <scm>
-        <url>https://github.com/hazendaz/jmockit1</url>
         <connection>scm:git:https://github.com/hazendaz/jmockit1</connection>
         <developerConnection>scm:git:ssh://git@github.com/hazendaz/jmockit1.git</developerConnection>
         <tag>HEAD</tag>
+        <url>https://github.com/hazendaz/jmockit1</url>
     </scm>
 
     <properties>
@@ -47,32 +47,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <profiles>
-        <profile>
-            <id>jdk17on</id>
-            <activation>
-                <jdk>[17,)</jdk>
-            </activation>
-            <properties>
-                <argLine>-javaagent:${settings.localRepository}/com/github/hazendaz/jmockit/jmockit/1.52.0/jmockit-1.52.0.jar=coverage --add-opens java.base/java.lang=ALL-UNNAMED</argLine>
-            </properties>
-            <build>
-                <plugins>
-                     <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-javadoc-plugin</artifactId>
-                        <configuration>
-                            <additionalOptions combine.children="append">
-                                <option>--add-modules</option>
-                                <option>java.desktop</option>
-                                <option>--add-modules</option>
-                                <option>java.sql</option>
-                            </additionalOptions>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile>
-    </profiles>
 </project>

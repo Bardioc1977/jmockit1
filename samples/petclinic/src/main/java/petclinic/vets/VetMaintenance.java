@@ -1,10 +1,11 @@
 package petclinic.vets;
 
+import jakarta.inject.Inject;
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 
 import javax.annotation.Nonnull;
-import javax.inject.Inject;
-import javax.transaction.Transactional;
 
 import petclinic.util.Database;
 

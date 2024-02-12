@@ -7,6 +7,8 @@ import static org.junit.Assert.fail;
 
 import jakarta.faces.event.ActionEvent;
 import jakarta.faces.event.ActionListener;
+import jakarta.servlet.ServletContextEvent;
+import jakarta.servlet.ServletContextListener;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.ThreadMXBean;
@@ -17,7 +19,6 @@ import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import javax.servlet.ServletContextListener;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
@@ -646,6 +647,9 @@ public final class CapturingImplementationsTest {
         assertFalse(notCaptured);
     }
 
+    @Capturing
+    ServletContextListener mockedServletContextListener;
+
     /**
      * Capture library class implementing interface from another library.
      *
@@ -653,15 +657,14 @@ public final class CapturingImplementationsTest {
      *            the mock
      */
     @Test
-    public void captureLibraryClassImplementingInterfaceFromAnotherLibrary(
-            @Capturing final ServletContextListener mock) {
+    public void captureLibraryClassImplementingInterfaceFromAnotherLibrary(@Mocked ServletContextEvent event) {
         // noinspection UnnecessaryFullyQualifiedName
-        ServletContextListener contextListener = new org.springframework.web.util.WebAppRootListener();
-        contextListener.contextInitialized(null);
+        var contextListener = new org.springframework.web.util.WebAppRootListener();
+        contextListener.contextInitialized(event);
 
         new Verifications() {
             {
-                mock.contextInitialized(null);
+                mockedServletContextListener.contextInitialized(null);
             }
         };
     }

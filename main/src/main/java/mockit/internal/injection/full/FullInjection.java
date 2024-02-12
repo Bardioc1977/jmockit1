@@ -13,18 +13,19 @@ import static mockit.internal.injection.InjectionPoint.SERVLET_CLASS;
 import static mockit.internal.reflection.ConstructorReflection.newInstanceUsingDefaultConstructorIfAvailable;
 import static mockit.internal.util.Utilities.getClassType;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
+import jakarta.annotation.Resource;
+import jakarta.enterprise.context.Conversation;
+import jakarta.inject.Provider;
+import jakarta.inject.Singleton;
+
 import java.lang.annotation.Annotation;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 import java.util.logging.Logger;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
-import javax.annotation.Resource;
-import javax.enterprise.context.Conversation;
-import javax.inject.Provider;
-import javax.inject.Singleton;
 import javax.sql.CommonDataSource;
 
 import mockit.asm.jvmConstants.Access;

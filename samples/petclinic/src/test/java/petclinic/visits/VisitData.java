@@ -1,9 +1,9 @@
 package petclinic.visits;
 
-import java.util.Date;
+import jakarta.annotation.Nonnull;
+import jakarta.inject.Inject;
 
-import javax.annotation.Nonnull;
-import javax.inject.Inject;
+import java.util.Date;
 
 import petclinic.pets.Pet;
 import petclinic.pets.PetData;

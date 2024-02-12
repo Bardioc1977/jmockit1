@@ -1,12 +1,13 @@
 package petclinic.vets;
 
+import jakarta.faces.view.ViewScoped;
+import jakarta.inject.Inject;
+import jakarta.inject.Named;
+import jakarta.transaction.Transactional;
+
 import java.util.List;
 
 import javax.annotation.Nullable;
-import javax.faces.view.ViewScoped;
-import javax.inject.Inject;
-import javax.inject.Named;
-import javax.transaction.Transactional;
 
 /**
  * An application service class that handles {@link Vet}-related operations from the vet screen.

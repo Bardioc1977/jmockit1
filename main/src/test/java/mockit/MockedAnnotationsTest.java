@@ -6,11 +6,12 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Resource;
+
 import java.lang.annotation.Annotation;
 
 import javax.annotation.Nonnegative;
-import javax.annotation.Nonnull;
-import javax.annotation.Resource;
 
 import org.junit.Test;
 

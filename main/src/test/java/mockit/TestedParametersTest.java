@@ -8,10 +8,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 
+import jakarta.inject.Inject;
+
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-
-import javax.inject.Inject;
 
 import org.junit.Test;
 

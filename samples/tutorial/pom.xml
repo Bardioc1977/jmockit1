@@ -4,16 +4,16 @@
     <parent>
         <groupId>com.github.hazendaz.jmockit</groupId>
         <artifactId>samples</artifactId>
-        <version>1.52.1-SNAPSHOT</version>
+        <version>1.52.1-p1</version>
     </parent>
     <artifactId>tutorial</artifactId>
     <name>Tutorial Sample</name>
 
     <scm>
-        <url>https://github.com/hazendaz/jmockit1</url>
         <connection>scm:git:https://github.com/hazendaz/jmockit1</connection>
         <developerConnection>scm:git:ssh://git@github.com/hazendaz/jmockit1.git</developerConnection>
         <tag>HEAD</tag>
+        <url>https://github.com/hazendaz/jmockit1</url>
     </scm>
 
     <properties>

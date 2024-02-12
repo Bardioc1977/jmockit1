@@ -1,10 +1,11 @@
 package petclinic.pets;
 
+import jakarta.inject.Inject;
+
 import java.util.Date;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.inject.Inject;
 
 import petclinic.owners.Owner;
 import petclinic.owners.OwnerData;

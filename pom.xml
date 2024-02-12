@@ -5,25 +5,25 @@
 
     <parent>
         <groupId>com.github.hazendaz</groupId>
-        <artifactId>base-parent</artifactId>
-        <version>44</version>
+        <artifactId>jmockit-base-parent</artifactId>
+        <version>1.0.0</version>
         <relativePath />
     </parent>
 
     <groupId>com.github.hazendaz.jmockit</groupId>
     <artifactId>jmockit-parent</artifactId>
-    <version>1.52.1-SNAPSHOT</version>
+    <version>1.52.1-p1</version>
     <packaging>pom</packaging>
 
     <name>jmockit-parent</name>
     <description>Parent POM for JMOCKIT</description>
 
-   <licenses>
-      <license>
-         <name>The MIT License</name>
-         <url>http://www.opensource.org/licenses/mit-license.php</url>
-      </license>
-   </licenses>
+    <licenses>
+        <license>
+            <name>The MIT License</name>
+            <url>http://www.opensource.org/licenses/mit-license.php</url>
+        </license>
+    </licenses>
 
     <modules>
         <module>coverageTests</module>
@@ -32,10 +32,10 @@
     </modules>
 
     <scm>
-        <url>https://github.com/hazendaz/jmockit1</url>
         <connection>scm:git:https://github.com/hazendaz/jmockit1</connection>
         <developerConnection>scm:git:ssh://git@github.com/hazendaz/jmockit1.git</developerConnection>
         <tag>HEAD</tag>
+        <url>https://github.com/hazendaz/jmockit1</url>
     </scm>
 
     <distributionManagement>
@@ -48,36 +48,19 @@
 
     <properties>
         <!-- Maven compiler options -->
-        <java.version>11</java.version>
-        <java.release.version>11</java.release.version>
-        <!-- Set on purpose as this repo will fail if moved up to 11 currently for anything < jdk 13 -->
-        <javadoc.java.release.version>8</javadoc.java.release.version>
+        <java.version>17</java.version>
+        <java.release.version>17</java.release.version>
 
         <!-- Reproducible Builds -->
-        <project.build.outputTimestamp>1702535133</project.build.outputTimestamp>
+        <project.build.outputTimestamp>1707395609</project.build.outputTimestamp>
 
         <!-- Automatic Module Name -->
         <module.name>com.github.hazendaz.jmockit.parent</module.name>
 
         <!-- Surefire Argline -->
-        <argLine>-javaagent:${settings.localRepository}/com/github/hazendaz/jmockit/jmockit/1.52.0/jmockit-1.52.0.jar</argLine>
+        <argLine>-javaagent:${settings.localRepository}/com/github/hazendaz/jmockit/jmockit/1.52.1-p1/jmockit-1.52.1-p1.jar</argLine>
 
         <!-- Override jacoco plugin to latest -->
         <jacoco.plugin>0.8.11</jacoco.plugin>
     </properties>
-
-    <profiles>
-        <profile>
-            <id>jdk17on</id>
-            <activation>
-                <jdk>[17,)</jdk>
-            </activation>
-            <properties>
-                <argLine>-javaagent:${settings.localRepository}/com/github/hazendaz/jmockit/jmockit/1.52.0/jmockit-1.52.0.jar --add-opens java.base/java.lang=ALL-UNNAMED</argLine>
-                <!-- Javadoc Release is strict due to maven bug and automatic module naming; it needs extra help, see examples (note: done on jdk 17 only as broken until jdk 13 and not backported) -->
-                <javadoc.java.release.version>11</javadoc.java.release.version>
-            </properties>
-        </profile>
-    </profiles>
-
 </project>
